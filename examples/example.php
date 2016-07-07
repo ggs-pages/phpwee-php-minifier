@@ -7,8 +7,9 @@ function myAutoloader($class)
 
 spl_autoload_register('myAutoloader');
 
-$html = file_get_contents("http://en.wikipedia.org/wiki/Minification_%28programming%29");
+$html = file_get_contents("http://lp.gamepages-staging.goodgamestudios.com/lp/12/5208c285f7d9481ca9ff1fe139b276a4/es");
 $minified = PHPWee\PHPWee::html($html);
+echo $minified;
 print_performance_graph("Wikipedia", $minified, $html);
 
 /*
