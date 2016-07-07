@@ -52,7 +52,7 @@ class HtmlMin
         $doc = new \DOMDocument('1.0', $encoding);
         $doc->preserveWhiteSpace = false;
         $doc->encoding = $encoding;
-        @$doc->loadHTML($html);
+        @$doc->loadHTML("<?xml encoding=\"$encoding\" ?>" . $html);
         $xpath = new \DOMXPath($doc);
         foreach ($xpath->query('//comment()') as $comment) {
             $val= $comment->nodeValue;
