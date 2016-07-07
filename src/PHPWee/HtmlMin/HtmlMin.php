@@ -53,7 +53,9 @@ class HtmlMin
         $doc->preserveWhiteSpace = false;
         $doc->encoding = $encoding;
         @$doc->loadHTML(
-            "<?xml encoding=\"$encoding\" ?>" . $html,
+            mb_convert_encoding(
+                "<?xml encoding=\"$encoding\" ?>" . $html, 'HTML-ENTITIES', $encoding
+            ),
             LIBXML_NOBLANKS | LIBXML_NOCDATA | LIBXML_COMPACT
         );
         $xpath = new \DOMXPath($doc);
