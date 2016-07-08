@@ -52,7 +52,7 @@ class HtmlMin
         $doc = new \DOMDocument('1.0', $encoding);
         $doc->preserveWhiteSpace = false;
         @$doc->loadHTML(
-            "<?xml encoding=\"$encoding\" ?>" . mb_convert_encoding(
+            mb_convert_encoding(
                 $html,
                 'HTML-ENTITIES',
                 $encoding
