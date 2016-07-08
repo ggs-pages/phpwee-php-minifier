@@ -5,7 +5,7 @@ namespace PHPWee;
  * Class PHPWee
  * @package PHPWee
  */
-class PHPWee
+class Minify
 {
     /**
      * @param $html
