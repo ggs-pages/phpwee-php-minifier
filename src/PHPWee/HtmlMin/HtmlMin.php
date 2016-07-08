@@ -51,10 +51,11 @@ class HtmlMin
     {
         $doc = new \DOMDocument('1.0', $encoding);
         $doc->preserveWhiteSpace = false;
-        $doc->encoding = $encoding;
         @$doc->loadHTML(
-            mb_convert_encoding(
-                "<?xml encoding=\"$encoding\" ?>" . $html, 'HTML-ENTITIES', $encoding
+            "<?xml encoding=\"$encoding\" ?>" . mb_convert_encoding(
+                $html,
+                'HTML-ENTITIES',
+                $encoding
             ),
             LIBXML_NOBLANKS | LIBXML_NOCDATA | LIBXML_COMPACT
         );
@@ -149,6 +150,7 @@ class HtmlMin
                 $d->nodeValue = CssMin::minify($d->nodeValue);
             }
         }
+        $doc->encoding = $encoding;
         return ($doc->saveHTML());
     }
 }
