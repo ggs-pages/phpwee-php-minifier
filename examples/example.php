@@ -7,31 +7,30 @@ function myAutoloader($class)
 
 spl_autoload_register('myAutoloader');
 
-$html = file_get_contents("http://lp.gamepages-staging.goodgamestudios.com/lp/12/5208c285f7d9481ca9ff1fe139b276a4/es");
+$html = file_get_contents("http://en.wikipedia.org/wiki/Minification_%28programming%29");
 $minified = PHPWee\PHPWee::html($html);
 echo $minified;
 print_performance_graph("Wikipedia", $minified, $html);
 
-/*
+
 $html = file_get_contents("http://www.codeproject.com/Articles/759094/Step-by-Step-PHP-Tutorials-for-Beginners-Creating");
-$minified = PHPWee\Minify::html($html);
+$minified = PHPWee\PHPWee::html($html);
 echo print_performance_graph("The Code Project",$minified,$html);
 
 
 $html = file_get_contents("https://github.com/php/php-src");
-$minified = PHPWee\Minify::html($html);
+$minified = PHPWee\PHPWee::html($html);
 print_performance_graph("GiHub",$minified,$html);
 
 
 $html = file_get_contents("http://www.w3schools.com/php/");
-$minified = PHPWee\Minify::html($html);
+$minified = PHPWee\PHPWee::html($html);
 print_performance_graph("W3Schools",$minified,$html);
 
 
 $html = file_get_contents("http://searchturbine.com");
-$minified = PHPWee\Minify::html($html);
+$minified = PHPWee\PHPWee::html($html);
 print_performance_graph("SearchTurbine",$minified,$html);
-*/
 
 
 ///////////////////////////////////////////////////////////////
